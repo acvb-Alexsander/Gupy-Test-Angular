@@ -1,0 +1,16 @@
+mat-toolbar{
+  color-scheme: light;
+  background-color: var(--mat-sys-primary);
+  display: flex;
+  gap: 5px;
+span{
+  color: #eae3e3;
+  font-weight: 500;
+}
+  nav{
+    margin-left: auto;
+    text-decoration: none;
+    display: flex;
+    gap: 15px;
+  }
+}
