@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-toolbar>
+    <span>Gestão de Pedidos</span>
+
+    <span class="example-spacer"></span>
+
+    <nav>
+
+
+      @if (isTrue){
+      <a mat-button>Home</a>
+      <a mat-button>Products</a>
+      <a mat-button>Pricing</a>
+      <a mat-button>About</a>
+      } @else {
+        <a mat-button>Login</a>
+      }
+    </nav>
+  </mat-toolbar>
+</mat-card>
