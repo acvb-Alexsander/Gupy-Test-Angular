@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatCard, MatCardContent } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -9,16 +9,15 @@ import { RouterLink } from '@angular/router';
 @Component({
   standalone: true,
   imports: [
-    MatCard,
-    MatCardContent,
+    MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
     MatIconModule,
     RouterLink,
   ],
-  selector: 'app-login',
-  styleUrl: './login.scss',
-  templateUrl: './login.html',
+  selector: 'app-cadastro',
+  styleUrl: './cadastro.scss',
+  templateUrl: './cadastro.html',
 })
-export class Login {}
+export class Cadastro {}
