@@ -1,20 +1,21 @@
-<mat-card>
-  <mat-toolbar>
-    <img src="img/attus-logo.png" alt="" />
-    <div>
-      <span class="title">Procuradoria Digital</span>
+<mat-card class="header-card">
+  <mat-toolbar class="header-toolbar">
+    <div class="header-brand">
+      <img src="img/attus-logo.png" alt="Logo Attus" routerLink="" class="brand-logo" />
 
-      <span class="subtitle">Gestão de Pedidos</span>
+      <div class="brand-text">
+        <span class="title">Procuradoria Digital</span>
+        <span class="subtitle">Gestão de Pedidos</span>
+      </div>
     </div>
-    <nav>
-      @if (isTrue) {
-        <a mat-button>Home</a>
-        <a mat-button>Products</a>
-        <a mat-button>Pricing</a>
-        <a mat-button>About</a>
+
+    <nav class="header-nav">
+      @if (isTrue$ | async) {
+        <button mat-button type="button" (click)="logout()">Sair</button>
       } @else {
-        <a mat-button routerLink="/login">Sign in</a>
-        <a mat-button routerLink="/cadastro">Sign up</a>
+        <a mat-button routerLink="/login" class="nav-link btn-signin"> Sign in </a>
+
+        <a mat-flat-button routerLink="/cadastro" class="btn-signup"> Sign up </a>
       }
     </nav>
   </mat-toolbar>
