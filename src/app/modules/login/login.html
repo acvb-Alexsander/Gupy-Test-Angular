@@ -12,7 +12,14 @@
       <mat-form-field appearance="outline">
         <mat-label>E-mail</mat-label>
 
-        <input matInput id="email" type="email" aria-label="E-mail" placeholder="seuemail@exemplo.com" required />
+        <input
+          matInput
+          id="email"
+          type="email"
+          aria-label="E-mail"
+          placeholder="seuemail@exemplo.com"
+          required
+        />
 
         <mat-icon matSuffix>email</mat-icon>
       </mat-form-field>
@@ -20,7 +27,14 @@
       <mat-form-field appearance="outline">
         <mat-label>Senha</mat-label>
 
-        <input matInput id="password" type="password" aria-label="Senha" placeholder="Digite sua senha" required />
+        <input
+          matInput
+          id="password"
+          type="password"
+          aria-label="Senha"
+          placeholder="Digite sua senha"
+          required
+        />
 
         <mat-icon matSuffix>lock</mat-icon>
       </mat-form-field>
@@ -30,7 +44,7 @@
       </div>
 
       <div class="action-btn">
-        <button matButton="filled" class="login-button">Entrar</button>
+        <button matButton="filled" class="login-button" (click)="login()">Entrar</button>
       </div>
     </mat-card-content>
 

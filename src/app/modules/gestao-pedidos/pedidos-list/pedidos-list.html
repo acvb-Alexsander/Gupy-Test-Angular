@@ -1,0 +1,83 @@
+<mat-card>
+  <mat-toolbar>Gestão de pedidos</mat-toolbar>
+
+  <mat-card-content>
+    <mat-table [dataSource]="(pedidos$ | async) ?? []">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+
+        <mat-cell *matCellDef="let element">
+          {{ element.id }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+
+        <mat-cell *matCellDef="let element">
+          {{ element.name }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef> Preço </mat-header-cell>
+
+        <mat-cell *matCellDef="let element">
+          {{ element.price }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="category">
+        <mat-header-cell *matHeaderCellDef> Categoria </mat-header-cell>
+
+        <mat-cell *matCellDef="let element">
+          {{ element.category }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef> Descrição </mat-header-cell>
+
+        <mat-cell *matCellDef="let element">
+          {{ element.description }}
+        </mat-cell>
+      </ng-container>
+
+      <!--Actions Column-->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>
+          <button
+            matIconButton
+            class="fontsize-button"
+            aria-label="Add form button"
+            (click)="onAdd()"
+          >
+            <mat-icon class="icon">add</mat-icon>
+          </button>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button
+            matIconButton
+            aria-label="Edit button"
+            class="actionsButtons"
+            (click)="onEdit(element)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            matIconButton
+            aria-label="Delete button"
+            class="actionsButtons"
+            (click)="onDelete(element)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"> </mat-header-row>
+
+      <mat-row *matRowDef="let row; columns: displayedColumns"> </mat-row>
+    </mat-table>
+  </mat-card-content>
+</mat-card>

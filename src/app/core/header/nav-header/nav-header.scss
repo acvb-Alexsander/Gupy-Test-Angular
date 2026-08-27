@@ -1,37 +1,107 @@
-mat-toolbar{
-  color-scheme: light;
-  background-color: rgb(98, 234, 152);
-  display: flex;
-  gap: 5px;
-span{
-  color: rgb(44, 11, 80);
-  font-weight: 500;
-}
-  nav{
-    margin-left: auto;
-    text-decoration: none;
-    display: flex;
-    gap: 15px;
-  }
-}
-
-img{
-  margin: 0 15px 15px 0 ;
+/* Remove bordas e sombras pesadas que o mat-card vem por padrão */
+.header-card {
   padding: 0;
-  width: 100px;
-  align-items: start;
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important; /* Sombra sutil de elevação */
 }
 
-div{
+.header-toolbar {
+  color-scheme: light;
+  background-color: #62ea98; /* Mantido seu verde original */
   display: flex;
-  flex-direction: column;
-  .title{
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 24px;
+}
 
+/* Container do Logo + Texto */
+.header-brand {
+
+  display: flex;
+  align-items: center; /* Alinha o logo e o texto perfeitamente pelo centro vertical */
+  gap: 16px;
+
+  .brand-logo {
+    margin: 0 15px 15px 0;
+    width: 90px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.02); /* Leve feedback visual ao passar o mouse na logo */
+    }
   }
-  .subtitle{
-    margin: 0;
-    padding: 0;
-    font-size: medium;
-    color: rgb(44, 11, 80);
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+
+    .title {
+      color: #2c0b50; /* Seu roxo escuro original */
+      font-size: 1.1rem;
+      font-weight: 700; /* Título mais marcante */
+      letter-spacing: -0.3px;
+    }
+
+    .subtitle {
+      color: rgba(44, 11, 80, 0.75); /* Roxo com opacidade para criar hierarquia visual */
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+  }
+}
+
+/* Menu de Navegação à Direita */
+.header-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaçamento ideal entre botões do Material */
+
+  /* Estilização dos botões comuns (mat-button) */
+  .nav-link {
+    color: #2c0b50 !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+
+    &:hover {
+      background-color: rgba(44, 11, 80, 0.08) !important; /* Cria um fundo sutil no hover */
+    }
+  }
+
+  /* Botão de destaque "Sign up" (mat-flat-button) */
+  .btn-signup {
+    background-color: #2c0b50 !important; /* Roxo escuro como cor de ação principal */
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 6px; /* Bordas levemente arredondadas modernas */
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(44, 11, 80, 0.2);
+    }
+  }
+}
+
+/* Responsividade: Se a tela for pequena (Mobile) */
+@media (max-width: 600px) {
+  .header-toolbar {
+    height: auto;
+    padding: 16px;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .header-nav {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
