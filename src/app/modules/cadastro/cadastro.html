@@ -1,0 +1,153 @@
+<mat-card class="cadastro-page">
+  <!-- Lado institucional -->
+  <section class="page-text">
+    <div class="brand">
+      <img src="img/attus-logo.png" alt="Attus" />
+      <span>Procuradoria Digital</span>
+    </div>
+
+    <div class="hero-content">
+      <span class="hero-label">INTELIGÊNCIA PARA SUA ROTINA</span>
+
+      <h1>
+        Treinando sua realidade,
+        <strong>o Attus vai te surpreender.</strong>
+      </h1>
+
+      <p>
+        O Attus realiza a leitura e compreensão de documentos, incluindo petições iniciais. A partir
+        disso, classifica e distribui automaticamente os processos, além de elaborar minutas.
+      </p>
+
+      <p>
+        Ele também monitora demandas e prazos, ajudando você a gerenciar tudo de forma mais simples
+        e eficiente.
+      </p>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <mat-icon>auto_awesome</mat-icon>
+
+        <div>
+          <strong>Automação inteligente</strong>
+          <span>Menos tarefas manuais no seu dia.</span>
+        </div>
+      </div>
+
+      <div class="feature">
+        <mat-icon>description</mat-icon>
+
+        <div>
+          <strong>Leitura de documentos</strong>
+          <span>Informações organizadas automaticamente.</span>
+        </div>
+      </div>
+
+      <div class="feature">
+        <mat-icon>schedule</mat-icon>
+
+        <div>
+          <strong>Controle de prazos</strong>
+          <span>Mais segurança para suas demandas.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulário -->
+  <section class="cadastro-card">
+    <div class="cadastro-header">
+      <span class="cadastro-label">CRIAR CONTA</span>
+
+      <h2>Comece agora</h2>
+
+      <p>Preencha seus dados para criar sua conta.</p>
+    </div>
+
+    <mat-card-content class="cadastro-content">
+      <form>
+        <mat-form-field appearance="outline">
+          <mat-label>Nome completo</mat-label>
+
+          <input
+            matInput
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Digite seu nome"
+            aria-label="Nome completo"
+            required
+          />
+
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>E-mail</mat-label>
+
+          <input
+            matInput
+            id="email"
+            type="email"
+            name="email"
+            placeholder="seuemail@exemplo.com"
+            aria-label="E-mail"
+            required
+          />
+
+          <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Telefone</mat-label>
+
+          <input
+            matInput
+            id="phone"
+            type="tel"
+            name="phone"
+            placeholder="(00) 00000-0000"
+            aria-label="Telefone"
+          />
+
+          <mat-icon matSuffix>phone</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+
+          <input
+            matInput
+            id="password"
+            type="password"
+            name="password"
+            placeholder="Crie uma senha"
+            aria-label="Senha"
+            required
+          />
+
+          <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field>
+
+        <div class="password-info">
+          <mat-icon>info</mat-icon>
+          <span> Use uma senha com pelo menos 8 caracteres. </span>
+        </div>
+
+        <div class="action-btn">
+          <button matButton="filled" type="submit" class="cadastro-button">
+            Criar minha conta
+            <mat-icon>arrow_forward</mat-icon>
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+
+    <div class="cadastro-footer">
+      <span>Já possui uma conta?</span>
+
+      <a routerLink="/login"> Entrar </a>
+    </div>
+  </section>
+</mat-card>

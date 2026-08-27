@@ -1,1 +1,43 @@
-<p>login works!</p>
+<mat-card class="login-page">
+  <mat-card class="login-card">
+    <div class="login-header">
+      <span class="login-label">ACESSO</span>
+
+      <h1>Seja bem-vindo</h1>
+
+      <p>Digite seu e-mail e senha para acessar sua conta.</p>
+    </div>
+
+    <mat-card-content class="login-content">
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+
+        <input matInput id="email" type="email" aria-label="E-mail" placeholder="seuemail@exemplo.com" required />
+
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Senha</mat-label>
+
+        <input matInput id="password" type="password" aria-label="Senha" placeholder="Digite sua senha" required />
+
+        <mat-icon matSuffix>lock</mat-icon>
+      </mat-form-field>
+
+      <div class="forgot-password">
+        <a href="#">Esqueci minha senha</a>
+      </div>
+
+      <div class="action-btn">
+        <button matButton="filled" class="login-button">Entrar</button>
+      </div>
+    </mat-card-content>
+
+    <div class="login-footer">
+      <span>Ainda não possui uma conta?</span>
+
+      <a routerLink="/cadastro">Criar conta</a>
+    </div>
+  </mat-card>
+</mat-card>
