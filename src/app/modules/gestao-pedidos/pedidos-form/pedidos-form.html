@@ -1,0 +1,53 @@
+<mat-card class="form-card">
+  <mat-card-content>
+    <!-- Título limpo e integrado à identidade visual -->
+    <mat-toolbar class="form-toolbar">Cadastrar Novo Pedido</mat-toolbar>
+
+    <form [formGroup]="form">
+      <!-- Campo: Nome -->
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label id="name-label">Nome do Pedido</mat-label>
+        <input id="name" matInput aria-labelledby="name-label" placeholder="Ex: Notebook Corporativo" formControlName="name" />
+      </mat-form-field>
+
+      <!-- Linha dupla: Preço e Categoria lado a lado -->
+      <div class="form-row">
+        <!-- Campo: Preço -->
+        <mat-form-field class="form-group" appearance="outline">
+          <mat-label id="price-label">Preço</mat-label>
+          <input id="price" matInput type="number" aria-labelledby="price-label" placeholder="0.00" formControlName="price" prefix="R$ " />
+        </mat-form-field>
+
+        <!-- Campo: Categoria -->
+        <mat-form-field class="form-group" appearance="outline">
+          <mat-label>Categoria</mat-label>
+          <mat-select formControlName="category">
+            <mat-option value="Eletrônicos">Eletrônicos</mat-option>
+            <mat-option value="Móveis">Móveis</mat-option>
+            <mat-option value="Suprimentos">Suprimentos</mat-option>
+            <mat-option value="Serviços">Serviços</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Campo: Descrição (Textarea para textos longos) -->
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label id="description-label">Descrição</mat-label>
+        <textarea
+          id="description"
+          matInput
+          rows="4"
+          aria-labelledby="description-label"
+          placeholder="Detalhes e especificações do pedido..."
+          formControlName="description"
+        ></textarea>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <!-- Botões de Ação do Card -->
+  <mat-card-actions class="form-actions">
+    <button mat-button class="btn-cancelar" (click)="onCancel()">Cancelar</button>
+    <button mat-raised-button class="btn-salvar" (click)="onSubmit()">Salvar Pedido</button>
+  </mat-card-actions>
+</mat-card>

@@ -129,6 +129,28 @@ mat-cell:last-child {
   padding-right: 24px;
 }
 
+.fontsize {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.fontsize-button {
+  flex: 0 0 90px;
+  background-color: var(--mat-sys-primary);
+  .icon {
+    color: black;
+  }
+}
+
+button {
+  margin-right: 1em;
+}
+
+.actionsButtons{
+  color-scheme: dark;
+  background-color: var(--mat-sys-surface);
+}
+
 /* Responsividade */
 
 @media (max-width: 768px) {

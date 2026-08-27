@@ -43,6 +43,38 @@
         </mat-cell>
       </ng-container>
 
+      <!--Actions Column-->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>
+          <button
+            matIconButton
+            class="fontsize-button"
+            aria-label="Add form button"
+            (click)="onAdd()"
+          >
+            <mat-icon class="icon">add</mat-icon>
+          </button>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button
+            matIconButton
+            aria-label="Edit button"
+            class="actionsButtons"
+            (click)="onEdit(element)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            matIconButton
+            aria-label="Delete button"
+            class="actionsButtons"
+            (click)="onDelete(element)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
       <mat-header-row *matHeaderRowDef="displayedColumns"> </mat-header-row>
 
       <mat-row *matRowDef="let row; columns: displayedColumns"> </mat-row>

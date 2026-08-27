@@ -16,4 +16,27 @@ export class CallPedidosService {
       tap((pedidos) => console.log(pedidos)),
     );
   }
+
+  loadById(id: string) {
+    return this.httpClient.get<Pedido>(`${this.API}/${id}`);
+  }
+
+  saveForm(response: Pedido) {
+    if (response.id) {
+      return this.updateForm(response);
+    }
+    return this.createForm(response);
+  }
+
+  createForm(response: Pedido) {
+    return this.httpClient.post<Pedido>(this.API, response);
+  }
+
+  updateForm(response: Pedido) {
+    return this.httpClient.put<Pedido>(`${this.API}/${response.id}`, response);
+  }
+
+  deleteForm(id: number) {
+    return this.httpClient.delete(`${this.API}/${id}`);
+  }
 }
