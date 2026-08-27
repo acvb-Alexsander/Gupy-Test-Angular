@@ -1,19 +1,20 @@
 <mat-card>
   <mat-toolbar>
-    <span>Gestão de Pedidos</span>
+    <img src="img/attus-logo.png" alt="" />
+    <div>
+      <span class="title">Procuradoria Digital</span>
 
-    <span class="example-spacer"></span>
-
+      <span class="subtitle">Gestão de Pedidos</span>
+    </div>
     <nav>
-
-
-      @if (isTrue){
-      <a mat-button>Home</a>
-      <a mat-button>Products</a>
-      <a mat-button>Pricing</a>
-      <a mat-button>About</a>
+      @if (isTrue) {
+        <a mat-button>Home</a>
+        <a mat-button>Products</a>
+        <a mat-button>Pricing</a>
+        <a mat-button>About</a>
       } @else {
-        <a mat-button>Login</a>
+        <a mat-button>Sign in</a>
+        <a mat-button>Sign up</a>
       }
     </nav>
   </mat-toolbar>

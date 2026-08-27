@@ -1,10 +1,10 @@
 mat-toolbar{
   color-scheme: light;
-  background-color: var(--mat-sys-primary);
+  background-color: rgb(98, 234, 152);
   display: flex;
   gap: 5px;
 span{
-  color: #eae3e3;
+  color: rgb(44, 11, 80);
   font-weight: 500;
 }
   nav{
@@ -12,5 +12,26 @@ span{
     text-decoration: none;
     display: flex;
     gap: 15px;
+  }
+}
+
+img{
+  margin: 0 15px 15px 0 ;
+  padding: 0;
+  width: 100px;
+  align-items: start;
+}
+
+div{
+  display: flex;
+  flex-direction: column;
+  .title{
+
+  }
+  .subtitle{
+    margin: 0;
+    padding: 0;
+    font-size: medium;
+    color: rgb(44, 11, 80);
   }
 }
