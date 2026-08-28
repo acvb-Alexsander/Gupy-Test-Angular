@@ -1,7 +1,7 @@
 <mat-card class="login-page">
   <mat-card class="login-card">
     <div class="login-header">
-      <span class="login-label">ACESSO</span>
+      <span class="login-label"> ACESSO </span>
 
       <h1>Seja bem-vindo</h1>
 
@@ -9,49 +9,71 @@
     </div>
 
     <mat-card-content class="login-content">
-      <mat-form-field appearance="outline">
-        <mat-label>E-mail</mat-label>
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <!-- E-mail -->
+        <mat-form-field appearance="outline">
+          <mat-label> E-mail </mat-label>
 
-        <input
-          matInput
-          id="email"
-          type="email"
-          aria-label="E-mail"
-          placeholder="seuemail@exemplo.com"
-          required
-        />
+          <input
+            matInput
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="seuemail@exemplo.com"
+          />
 
-        <mat-icon matSuffix>email</mat-icon>
-      </mat-form-field>
+          <mat-icon matSuffix> email </mat-icon>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Senha</mat-label>
+          @if (form.get('email')?.hasError('required') && form.get('email')?.touched) {
+            <mat-error> E-mail é obrigatório </mat-error>
+          }
 
-        <input
-          matInput
-          id="password"
-          type="password"
-          aria-label="Senha"
-          placeholder="Digite sua senha"
-          required
-        />
+          @if (form.get('email')?.hasError('email') && form.get('email')?.touched) {
+            <mat-error> Digite um e-mail válido </mat-error>
+          }
+        </mat-form-field>
 
-        <mat-icon matSuffix>lock</mat-icon>
-      </mat-form-field>
+        <!-- Senha -->
+        <mat-form-field appearance="outline">
+          <mat-label> Senha </mat-label>
 
-      <div class="forgot-password">
-        <a href="#">Esqueci minha senha</a>
-      </div>
+          <input
+            matInput
+            id="password"
+            type="password"
+            formControlName="password"
+            placeholder="Digite sua senha"
+            minlength="8"
+          />
 
-      <div class="action-btn">
-        <button matButton="filled" class="login-button" (click)="login()">Entrar</button>
-      </div>
+          <mat-icon matSuffix> lock </mat-icon>
+
+          @if (
+            form.get('password')?.hasError('minlength') ||
+            form.get('password')?.hasError('maxlength')
+          ) {
+            <mat-error> Senha é obrigatória </mat-error>
+          }
+        </mat-form-field>
+
+        <!-- Esqueci minha senha -->
+        <div class="forgot-password">
+          <a href="esqueci-senha"> Esqueci minha senha </a>
+        </div>
+
+        <!-- Botão -->
+        <div class="action-btn">
+          <button matButton="filled" type="submit" class="login-button">Entrar</button>
+        </div>
+      </form>
     </mat-card-content>
 
+    <!-- Rodapé -->
     <div class="login-footer">
-      <span>Ainda não possui uma conta?</span>
+      <span> Ainda não possui uma conta? </span>
 
-      <a routerLink="/cadastro">Criar conta</a>
+      <a routerLink="/cadastro"> Criar conta </a>
     </div>
   </mat-card>
 </mat-card>
+```

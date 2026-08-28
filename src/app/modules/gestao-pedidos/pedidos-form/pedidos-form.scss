@@ -1,4 +1,26 @@
-/* 🗂️ Card do Formulário */
+
+.page {
+  min-height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(106, 48, 147, 0.12),
+      transparent 40%
+    ),
+    #f5f3f7;
+
+  border-radius: 0;
+  box-shadow: none;
+}
 .form-card {
   max-width: 650px;
   margin: 2rem auto;
