@@ -20,6 +20,7 @@
             matInput
             type="email"
             formControlName="email"
+            aria-label="E-mail"
             placeholder="seuemail@exemplo.com"
           />
 
@@ -40,10 +41,11 @@
           <mat-label> Nova senha </mat-label>
 
           <input
-            id=""
+            id="password"
             matInput
             type="password"
             formControlName="password"
+            aria-label="Nova senha"
             placeholder="Digite sua nova senha"
           />
 
@@ -60,9 +62,11 @@
           <mat-label> Confirmar senha </mat-label>
 
           <input
+            id="confirm-password"
             matInput
             type="password"
             formControlName="confirmPassword"
+            aria-label="Confirmar senha"
             placeholder="Digite novamente sua senha"
           />
 
