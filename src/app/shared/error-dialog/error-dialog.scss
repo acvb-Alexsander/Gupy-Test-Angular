@@ -1,0 +1,30 @@
+*{
+  overflow: hidden;
+}
+:host {
+  display: block;
+}
+
+h2 {
+  margin: 0;
+  color: #1b1f1d;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+mat-dialog-content {
+  padding-top: 8px;
+
+  color: #555;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+mat-dialog-actions {
+  padding: 8px 0 0;
+}
+
+button {
+  color: #1f9d61;
+  font-weight: 600;
+}

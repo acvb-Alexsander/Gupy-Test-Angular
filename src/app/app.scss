@@ -1,4 +1,25 @@
+
 h1{
   color-scheme: light;
   background-color: var(--mat-sys-primary);
 }
+/* Conteúdo ocupa todo o espaço disponível */
+
+
+/* O componente de conteúdo também pode crescer */
+app-content {
+  display: block;
+  width: 100%;
+  flex: 1;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+}
+

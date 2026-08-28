@@ -5,4 +5,26 @@
   box-sizing: border-box;
 }
 
+body{
+  overflow: hidden;
+}
 
+
+@media (min-width: 769px) {
+  html, body {
+    height: 100vh;
+    overflow: hidden; /* Trava totalmente a tela no desktop */
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    /* Trocar 'hidden' por 'initial' remove qualquer bloqueio anterior */
+    overflow-x: hidden;  /* Evita que a tela balance para os lados */
+    overflow-y: initial; /* Restaura o comportamento padrão de scroll para baixo */
+
+    /* Permite que o corpo cresça de acordo com o tamanho do conteúdo */
+    height: auto;
+    min-height: 100vh;
+  }
+}
