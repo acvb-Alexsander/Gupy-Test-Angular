@@ -1,3 +1,4 @@
+```html
 <mat-card class="cadastro-page">
   <!-- Lado institucional -->
   <section class="page-text">
@@ -7,7 +8,7 @@
     </div>
 
     <div class="hero-content">
-      <span class="hero-label">INTELIGÊNCIA PARA SUA ROTINA</span>
+      <span class="hero-label"> INTELIGÊNCIA PARA SUA ROTINA </span>
 
       <h1>
         Treinando sua realidade,
@@ -58,7 +59,7 @@
   <!-- Formulário -->
   <section class="cadastro-card">
     <div class="cadastro-header">
-      <span class="cadastro-label">CRIAR CONTA</span>
+      <span class="cadastro-label"> CRIAR CONTA </span>
 
       <h2>Comece agora</h2>
 
@@ -66,7 +67,8 @@
     </div>
 
     <mat-card-content class="cadastro-content">
-      <form>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <!-- Nome -->
         <mat-form-field appearance="outline">
           <mat-label>Nome completo</mat-label>
 
@@ -74,15 +76,14 @@
             matInput
             id="name"
             type="text"
-            name="name"
+            formControlName="name"
             placeholder="Digite seu nome"
-            aria-label="Nome completo"
-            required
           />
 
-          <mat-icon matSuffix>person</mat-icon>
+          <mat-icon matSuffix> person </mat-icon>
         </mat-form-field>
 
+        <!-- E-mail -->
         <mat-form-field appearance="outline">
           <mat-label>E-mail</mat-label>
 
@@ -90,15 +91,14 @@
             matInput
             id="email"
             type="email"
-            name="email"
+            formControlName="email"
             placeholder="seuemail@exemplo.com"
-            aria-label="E-mail"
-            required
           />
 
-          <mat-icon matSuffix>email</mat-icon>
+          <mat-icon matSuffix> email </mat-icon>
         </mat-form-field>
 
+        <!-- Telefone -->
         <mat-form-field appearance="outline">
           <mat-label>Telefone</mat-label>
 
@@ -106,14 +106,14 @@
             matInput
             id="phone"
             type="tel"
-            name="phone"
+            formControlName="cel"
             placeholder="(00) 00000-0000"
-            aria-label="Telefone"
           />
 
-          <mat-icon matSuffix>phone</mat-icon>
+          <mat-icon matSuffix> phone </mat-icon>
         </mat-form-field>
 
+        <!-- Senha -->
         <mat-form-field appearance="outline">
           <mat-label>Senha</mat-label>
 
@@ -121,33 +121,34 @@
             matInput
             id="password"
             type="password"
-            name="password"
+            formControlName="password"
             placeholder="Crie uma senha"
-            aria-label="Senha"
-            required
           />
 
-          <mat-icon matSuffix>lock</mat-icon>
+          <mat-icon matSuffix> lock </mat-icon>
         </mat-form-field>
 
         <div class="password-info">
-          <mat-icon>info</mat-icon>
+          <mat-icon> info </mat-icon>
+
           <span> Use uma senha com pelo menos 8 caracteres. </span>
         </div>
 
         <div class="action-btn">
           <button matButton="filled" type="submit" class="cadastro-button">
             Criar minha conta
-            <mat-icon>arrow_forward</mat-icon>
+
+            <mat-icon> arrow_forward </mat-icon>
           </button>
         </div>
       </form>
     </mat-card-content>
 
     <div class="cadastro-footer">
-      <span>Já possui uma conta?</span>
+      <span> Já possui uma conta? </span>
 
       <a routerLink="/login"> Entrar </a>
     </div>
   </section>
 </mat-card>
+```

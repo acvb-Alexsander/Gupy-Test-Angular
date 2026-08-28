@@ -1,0 +1,461 @@
+.forgot-page {
+ min-height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(106, 48, 147, 0.12),
+      transparent 40%
+    ),
+    #f5f3f7;
+
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.forgot-card{
+  width: min(100%, 440px);
+
+  padding: 40px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(44, 11, 80, 0.08);
+  border-radius: 20px;
+
+  box-shadow:
+    0 20px 50px rgba(44, 11, 80, 0.10);
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   LADO INSTITUCIONAL
+   ========================= */
+
+.page-text {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  max-width: 680px;
+}
+
+
+/* Logo */
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 70px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #4b5563;
+}
+
+.brand img {
+  width: 48px;
+
+  height: auto;
+}
+
+
+/* Hero */
+
+.hero-content {
+  max-width: 620px;
+}
+
+.hero-label {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  color: #2563eb;
+}
+
+
+.hero-content h1 {
+  margin: 0 0 24px;
+
+  font-size: clamp(40px, 4vw, 62px);
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+
+  font-weight: 400;
+
+  color: #111827;
+}
+
+
+.hero-content h1 strong {
+  display: block;
+
+  font-weight: 700;
+
+  color: #2563eb;
+}
+
+
+.hero-content p {
+  max-width: 570px;
+
+  margin: 0 0 16px;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+
+  color: #6b7280;
+}
+
+
+/* =========================
+   FEATURES
+   ========================= */
+
+.features {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 24px;
+
+  margin-top: 60px;
+}
+
+
+.feature {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+}
+
+
+.feature mat-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 44px;
+
+  height: 44px;
+
+  border-radius: 12px;
+
+  background: #eaf1ff;
+
+  color: #2563eb;
+
+  font-size: 22px;
+}
+
+
+.feature div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.feature strong {
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #111827;
+}
+
+
+.feature span {
+  font-size: 13px;
+
+  color: #6b7280;
+}
+
+
+/* Header */
+
+.forgot-header {
+  margin-bottom: 32px;
+}
+
+
+.forgot-label {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+  color: #2563eb;
+}
+
+
+.forgot-header h2 {
+  margin: 0 0 10px;
+
+  font-size: 30px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  letter-spacing: -0.8px;
+
+  color: #111827;
+}
+
+
+.forgot-header p {
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: #6b7280;
+}
+
+
+/* =========================
+   FORM
+   ========================= */
+
+.forgot-content {
+  padding: 0;
+}
+
+
+form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+mat-form-field {
+  width: 100%;
+}
+
+
+/* Informação da senha */
+
+.password-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: -4px;
+
+  padding: 12px 14px;
+
+  border-radius: 10px;
+
+  background: #f5f8ff;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+.password-info mat-icon {
+  flex-shrink: 0;
+
+  width: 18px;
+
+  height: 18px;
+
+  font-size: 18px;
+
+  color: #2563eb;
+}
+
+
+/* =========================
+   BOTÃO
+   ========================= */
+
+.action-btn {
+  margin-top: 8px;
+}
+
+
+.forgot-button {
+  width: 100%;
+
+  min-height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+.forgot-button mat-icon {
+  font-size: 20px;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.forgot-footer {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 28px;
+
+  padding-top: 24px;
+
+  border-top: 1px solid #edf0f5;
+
+  font-size: 13px;
+
+  color: #6b7280;
+}
+
+
+.forgot-footer a {
+  font-weight: 600;
+
+  color: #2563eb;
+
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+
+
+.forgot-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   RESPONSIVO
+   ========================= */
+
+@media (max-width: 1000px) {
+
+  .forgot-page {
+    grid-template-columns: 1fr;
+
+    padding: 40px 24px;
+
+    gap: 50px;
+  }
+
+
+  .page-text {
+    max-width: 700px;
+
+    margin: 0 auto;
+  }
+
+
+  .brand {
+    margin-bottom: 40px;
+  }
+
+
+  .forgot-card {
+    max-width: 480px;
+
+    margin: 0 auto;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .forgot-page {
+    padding: 24px 16px;
+  }
+
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+
+  .features {
+    margin-top: 40px;
+  }
+
+
+  .forgot-card {
+    padding: 28px 22px;
+
+    border-radius: 18px;
+  }
+
+
+  .forgot-header h2 {
+    font-size: 26px;
+  }
+
+}
+

@@ -1,1 +1,83 @@
-<p>esqueci-senha works!</p>
+<mat-card class="forgot-page">
+  <mat-card class="forgot-card">
+    <div class="forgot-header">
+      <span class="forgot-label"> RECUPERAÇÃO </span>
+
+      <h1>Esqueci minha senha</h1>
+
+      <p>Informe seu e-mail e crie uma nova senha para sua conta.</p>
+    </div>
+
+    <mat-card-content class="forgot-content">
+      <form [formGroup]="form" (ngSubmit)="alterarSenha()">
+        <!-- E-mail -->
+
+        <mat-form-field appearance="outline">
+          <mat-label> E-mail </mat-label>
+
+          <input matInput type="email" formControlName="email" placeholder="seuemail@exemplo.com" />
+
+          <mat-icon matSuffix> email </mat-icon>
+
+          @if (form.get('email')?.hasError('required') && form.get('email')?.touched) {
+            <mat-error> E-mail é obrigatório </mat-error>
+          }
+
+          @if (form.get('email')?.hasError('email') && form.get('email')?.touched) {
+            <mat-error> Digite um e-mail válido </mat-error>
+          }
+        </mat-form-field>
+
+        <!-- Nova senha -->
+
+        <mat-form-field appearance="outline">
+          <mat-label> Nova senha </mat-label>
+
+          <input
+            matInput
+            type="password"
+            formControlName="password"
+            placeholder="Digite sua nova senha"
+          />
+
+          <mat-icon matSuffix> lock </mat-icon>
+
+          @if (form.get('password')?.hasError('minlength') && form.get('password')?.touched) {
+            <mat-error> A senha deve ter pelo menos 8 caracteres </mat-error>
+          }
+        </mat-form-field>
+
+        <!-- Confirmar senha -->
+
+        <mat-form-field appearance="outline">
+          <mat-label> Confirmar senha </mat-label>
+
+          <input
+            matInput
+            type="password"
+            formControlName="confirmPassword"
+            placeholder="Digite novamente sua senha"
+          />
+
+          <mat-icon matSuffix> lock </mat-icon>
+        </mat-form-field>
+
+        <!-- Botão -->
+
+        <div class="action-btn">
+          <button matButton="filled" type="submit" class="forgot-button">
+            Alterar senha
+
+            <mat-icon> arrow_forward </mat-icon>
+          </button>
+        </div>
+
+        <!-- Voltar -->
+
+        <div class="back-login">
+          <a routerLink="/login"> ← Voltar para o login </a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</mat-card>

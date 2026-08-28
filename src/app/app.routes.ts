@@ -5,6 +5,7 @@ import { Content } from './core/content/content';
 import { PedidosList } from './modules/gestao-pedidos/pedidos-list/pedidos-list';
 import { authGuard } from './guard/auth-guard';
 import { PedidosForm } from './modules/gestao-pedidos/pedidos-form/pedidos-form';
+import { EsqueciSenha } from './components/esqueci-senha/esqueci-senha';
 
 export const routes: Routes = [
   {
@@ -16,6 +17,10 @@ export const routes: Routes = [
     component: Login,
   },
   {
+    path: 'esqueci-senha',
+    component: EsqueciSenha,
+  },
+  {
     path: 'cadastro',
     component: Cadastro,
   },
@@ -25,17 +30,17 @@ export const routes: Routes = [
       {
         path: '',
         component: PedidosList,
-        // canActivate: [authGuard],
+        canActivate: [authGuard],
       },
       {
         path: 'new',
         component: PedidosForm,
-        // canActivate: [authGuard],
+        canActivate: [authGuard],
       },
       {
         path: 'edit/:id',
         component: PedidosForm,
-        // canActivate: [authGuard],
+        canActivate: [authGuard],
       },
     ],
   },
