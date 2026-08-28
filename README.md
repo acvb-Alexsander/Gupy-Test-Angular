@@ -76,6 +76,10 @@ A aplicação estará disponível no navegador em:
 🧪 Como Executar os Testes
 Para garantir a qualidade e resiliência da aplicação, ambos os ecossistemas possuem scripts de testes prontos para execução.
 
+Acessar o back-end
+
+git clone https://github.com/acvb-Alexsander/Gupy-Test-Spring.git
+
 Testes no Back-end
 Os testes de integração e testes unitários do Spring Boot podem ser executados com o Maven:
 
@@ -86,3 +90,14 @@ O front-end utiliza o Vitest como motor de testes (conforme configurado no packa
 
 Bash
 npm run test
+
+
+banco de dados 
+
+spring.application.name=Gupy-Test-Spring
+spring.datasource.url= jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.show-sql=true
