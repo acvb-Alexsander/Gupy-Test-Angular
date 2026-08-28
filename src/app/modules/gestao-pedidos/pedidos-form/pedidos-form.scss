@@ -65,6 +65,11 @@ form {
   }
 }
 
+button:disabled {
+  background: gray;
+  color: gray;
+}
+
 /* 🔘 Rodapé de Ações */
 .form-actions {
   display: flex;
@@ -87,6 +92,22 @@ form {
     &:hover {
       transform: translateY(-1px);
       box-shadow: 0 4px 12px rgba(44, 11, 80, 0.25) !important;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: #40146f !important;
+
+      transform: translateY(-1px);
+
+      box-shadow:
+        0 4px 12px rgba(44, 11, 80, 0.25) !important;
+    }
+
+    &:disabled {
+      background-color: #d1cdd5 !important;
+      color: #8b8790 !important;
+      cursor: not-allowed;
+      box-shadow: none !important;
     }
   }
 

@@ -49,9 +49,9 @@ export class Cadastro implements OnInit {
     this.form = this.formBuilder.group({
       id: [null],
       name: [null, Validators.required],
-      email: [null, Validators.required],
+      email: [null, Validators.required, Validators.email],
       cel: [null, Validators.required],
-      password: [null, Validators.required],
+      password: [null, Validators.required, Validators.minLength(8)],
     });
   }
 

@@ -85,6 +85,11 @@ export class PedidosForm implements OnInit {
   }
 
   onSubmit() {
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+
     const category = this.form.value.category;
     let icon = '';
     if (category == 'front-end') {
