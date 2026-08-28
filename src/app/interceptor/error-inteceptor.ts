@@ -8,7 +8,7 @@ import { catchError, throwError } from 'rxjs';
  * registrado de forma padronizada, o que ajuda no diagnóstico
  * (ex: correlacionar um erro no front com o log do backend).
  */
-export const errorInterceptor: HttpInterceptorFn = (req, next) => {
+export const ErrorInteceptor: HttpInterceptorFn = (req, next) => {
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
       console.error(

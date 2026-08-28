@@ -39,15 +39,15 @@ import { Userservice } from '../../service/userservice';
   styleUrl: './esqueci-senha.scss',
 })
 export class EsqueciSenha {
-  private formBuilder = inject(FormBuilder);
+  private readonly formBuilder = inject(FormBuilder);
 
-  private userService = inject(Userservice);
+  private readonly userService = inject(Userservice);
 
-  private router = inject(Router);
+  private readonly router = inject(Router);
 
-  private snackBar = inject(MatSnackBar);
+  private readonly snackBar = inject(MatSnackBar);
 
-  form = this.formBuilder.group({
+  readonly form = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
 
     password: ['', [Validators.required, Validators.minLength(8)]],

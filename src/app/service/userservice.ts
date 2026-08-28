@@ -2,13 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../interface/user';
 import { first, tap } from 'rxjs';
-import { environment } from '../../environments/environments';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Userservice {
-  private readonly API = `${environment.apiUrl}/users`;
+  private readonly API = 'http://localhost:8080/api/users';
 
   constructor(private readonly httpClient: HttpClient) {}
 

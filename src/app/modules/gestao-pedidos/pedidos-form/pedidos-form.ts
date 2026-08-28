@@ -1,12 +1,6 @@
 import { MatButtonModule } from '@angular/material/button';
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  FormGroupDirective,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCard, MatCardContent, MatCardActions } from '@angular/material/card';
@@ -39,11 +33,11 @@ export class PedidosForm implements OnInit {
   form: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder,
-    private callPedidoService: CallPedidosService,
-    private snakeBar: MatSnackBar,
-    private router: Router,
-    private route: ActivatedRoute,
+    private readonly formBuilder: FormBuilder,
+    private readonly callPedidoService: CallPedidosService,
+    private readonly snakeBar: MatSnackBar,
+    private readonly router: Router,
+    private readonly route: ActivatedRoute,
   ) {
     this.form = this.formBuilder.group({
       id: [null],

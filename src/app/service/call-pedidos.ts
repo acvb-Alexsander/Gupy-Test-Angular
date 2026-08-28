@@ -2,13 +2,12 @@ import { Pedido } from './../interface/pedido';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { first, tap } from 'rxjs';
-import { environment } from '../../environments/environments';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CallPedidosService {
-  private readonly API = `${environment.apiUrl}/pedidos`;
+  private readonly API = 'http://localhost:8080/api/pedidos';
   constructor(private readonly httpClient: HttpClient) {}
 
   listAll() {

@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { ErrorInteceptor } from './error-inteceptor';
 
 describe('ErrorInteceptor', () => {
-  let service: ErrorInteceptor;
+  let service: typeof ErrorInteceptor;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
