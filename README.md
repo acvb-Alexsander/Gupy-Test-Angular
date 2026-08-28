@@ -1,14 +1,14 @@
 Gupy Test - Fullstack Application
 Este repositório contém a solução para o desafio técnico Fullstack (Gupy), composto por uma API REST construída com Spring Boot (Java) e uma aplicação Front-end em Angular.
 
-🎯 Objetivos Concluídos
+Objetivos Concluídos
 API Documentada: Back-end estruturado com endpoints mapeados e documentação interativa gerada via Springdoc OpenAPI (Swagger).
 
 Front-end Funcional: Interface desenvolvida em Angular com o fluxo completo da aplicação, integrando Angular Material e Bootstrap, além de validações de formulário.
 
 Testes Implementados: Cobertura de cenários principais através de testes no Back-end (Spring Boot Test) e no Front-end (Vitest).
 
-🛠️ Tecnologias Utilizadas
+Tecnologias Utilizadas
 Back-end (Gupy-Test-Spring)
 Java 26
 
@@ -55,7 +55,7 @@ A API estará rodando por padrão na porta 8080.
 
 Acessando a Documentação da API:
 Com o back-end em execução, acesse a interface do Swagger para explorar e testar os endpoints através do navegador:
-👉 http://localhost:8080/swagger-ui.html
+http://localhost:8080/swagger-ui.html
 
 2. Executando o Front-end
    O projeto Angular está configurado com um proxy (proxy.conf.js) para evitar problemas de CORS ao se comunicar com o Back-end local.
@@ -71,9 +71,9 @@ Inicie o servidor de desenvolvimento:
 Bash
 npm start
 A aplicação estará disponível no navegador em:
-👉 http://localhost:4200
+http://localhost:4200
 
-🧪 Como Executar os Testes
+Como Executar os Testes
 Para garantir a qualidade e resiliência da aplicação, ambos os ecossistemas possuem scripts de testes prontos para execução.
 
 Acessar o back-end
