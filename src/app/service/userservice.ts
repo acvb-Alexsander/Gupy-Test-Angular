@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, Service } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { User } from '../interface/user';
 import { first, tap } from 'rxjs';
 

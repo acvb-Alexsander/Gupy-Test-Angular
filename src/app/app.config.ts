@@ -4,13 +4,16 @@ import {
   importProvidersFrom,
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { routes } from './app.routes';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ErrorInteceptor } from './interceptor/error-inteceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
+    provideHttpClient(withInterceptors([ErrorInteceptor])),
     importProvidersFrom(NgbModule),
   ],
 };

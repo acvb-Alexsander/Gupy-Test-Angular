@@ -1,4 +1,3 @@
-```html
 <mat-card class="cadastro-page">
   <!-- Lado institucional -->
   <section class="page-text">
@@ -7,6 +6,7 @@
       <span>Procuradoria Digital</span>
     </div>
 
+    ```
     <div class="hero-content">
       <span class="hero-label"> INTELIGÊNCIA PARA SUA ROTINA </span>
 
@@ -54,13 +54,16 @@
         </div>
       </div>
     </div>
+    ```
   </section>
 
   <!-- Formulário -->
+
   <section class="cadastro-card">
     <div class="cadastro-header">
       <span class="cadastro-label"> CRIAR CONTA </span>
 
+      ```
       <h2>Comece agora</h2>
 
       <p>Preencha seus dados para criar sua conta.</p>
@@ -77,10 +80,15 @@
             id="name"
             type="text"
             formControlName="name"
+            aria-label="Nome completo"
             placeholder="Digite seu nome"
           />
 
-          <mat-icon matSuffix> person </mat-icon>
+          <mat-icon matSuffix>person</mat-icon>
+
+          @if (form.get('name')?.hasError('required') && form.get('name')?.touched) {
+            <mat-error> O nome é obrigatório. </mat-error>
+          }
         </mat-form-field>
 
         <!-- E-mail -->
@@ -92,10 +100,19 @@
             id="email"
             type="email"
             formControlName="email"
+            aria-label="E-mail"
             placeholder="seuemail@exemplo.com"
           />
 
-          <mat-icon matSuffix> email </mat-icon>
+          <mat-icon matSuffix>email</mat-icon>
+
+          @if (form.get('email')?.hasError('required') && form.get('email')?.touched) {
+            <mat-error> O e-mail é obrigatório. </mat-error>
+          }
+
+          @if (form.get('email')?.hasError('email') && form.get('email')?.touched) {
+            <mat-error> Informe um e-mail válido. </mat-error>
+          }
         </mat-form-field>
 
         <!-- Telefone -->
@@ -107,10 +124,15 @@
             id="phone"
             type="tel"
             formControlName="cel"
+            aria-label="Telefone"
             placeholder="(00) 00000-0000"
           />
 
-          <mat-icon matSuffix> phone </mat-icon>
+          <mat-icon matSuffix>phone</mat-icon>
+
+          @if (form.get('cel')?.hasError('required') && form.get('cel')?.touched) {
+            <mat-error> O telefone é obrigatório. </mat-error>
+          }
         </mat-form-field>
 
         <!-- Senha -->
@@ -122,33 +144,50 @@
             id="password"
             type="password"
             formControlName="password"
+            aria-label="Senha"
             placeholder="Crie uma senha"
           />
 
-          <mat-icon matSuffix> lock </mat-icon>
+          <mat-icon matSuffix>lock</mat-icon>
+
+          @if (form.get('password')?.hasError('required') && form.get('password')?.touched) {
+            <mat-error> A senha é obrigatória. </mat-error>
+          }
+
+          @if (form.get('password')?.hasError('minlength') && form.get('password')?.touched) {
+            <mat-error> A senha deve ter pelo menos 8 caracteres. </mat-error>
+          }
         </mat-form-field>
 
+        <!-- Informação da senha -->
         <div class="password-info">
-          <mat-icon> info </mat-icon>
+          <mat-icon>info</mat-icon>
 
           <span> Use uma senha com pelo menos 8 caracteres. </span>
         </div>
 
+        <!-- Botão -->
         <div class="action-btn">
-          <button matButton="filled" type="submit" class="cadastro-button">
+          <button
+            matButton="filled"
+            type="submit"
+            class="cadastro-button"
+            [disabled]="form.invalid"
+          >
             Criar minha conta
 
-            <mat-icon> arrow_forward </mat-icon>
+            <mat-icon>arrow_forward</mat-icon>
           </button>
         </div>
       </form>
     </mat-card-content>
 
+    <!-- Rodapé -->
     <div class="cadastro-footer">
-      <span> Já possui uma conta? </span>
+      <span>Já possui uma conta?</span>
 
       <a routerLink="/login"> Entrar </a>
     </div>
+    ```
   </section>
 </mat-card>
-```

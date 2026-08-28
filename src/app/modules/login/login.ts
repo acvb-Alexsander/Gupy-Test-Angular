@@ -30,10 +30,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './login.html',
 })
 export class Login {
-  private authService = inject(AuthService);
-  private router = inject(Router);
-  private userService = inject(Userservice);
-  private formBuilder = inject(FormBuilder);
+  private readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
+  private readonly userService = inject(Userservice);
+  private readonly formBuilder = inject(FormBuilder);
 
   form = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],

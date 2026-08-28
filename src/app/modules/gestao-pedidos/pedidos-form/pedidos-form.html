@@ -1,13 +1,13 @@
 <mat-card class="page">
   <mat-card class="form-card">
     <mat-card-content>
-      <!-- Título limpo e integrado à identidade visual -->
-      <mat-toolbar class="form-toolbar">Cadastrar Novo Pedido</mat-toolbar>
+      <mat-toolbar class="form-toolbar"> Cadastrar Novo Pedido </mat-toolbar>
 
       <form [formGroup]="form">
         <!-- Campo: Nome -->
         <mat-form-field class="full-width" appearance="outline">
           <mat-label id="name-label">Nome do Pedido</mat-label>
+
           <input
             id="name"
             matInput
@@ -15,13 +15,18 @@
             placeholder="Ex: Notebook Corporativo"
             formControlName="name"
           />
+
+          @if (form.get('name')?.hasError('required') && form.get('name')?.touched) {
+            <mat-error> O nome do pedido é obrigatório. </mat-error>
+          }
         </mat-form-field>
 
-        <!-- Linha dupla: Preço e Categoria lado a lado -->
+        <!-- Linha dupla: Preço e Categoria -->
         <div class="form-row">
           <!-- Campo: Preço -->
           <mat-form-field class="form-group" appearance="outline">
             <mat-label id="price-label">Preço</mat-label>
+
             <input
               id="price"
               matInput
@@ -29,25 +34,41 @@
               aria-labelledby="price-label"
               placeholder="0.00"
               formControlName="price"
-              prefix="R$ "
             />
+
+            @if (form.get('price')?.hasError('required') && form.get('price')?.touched) {
+              <mat-error> O preço é obrigatório. </mat-error>
+            }
+
+            @if (form.get('price')?.hasError('min') && form.get('price')?.touched) {
+              <mat-error> O preço deve ser maior que zero. </mat-error>
+            }
           </mat-form-field>
 
           <!-- Campo: Categoria -->
           <mat-form-field class="form-group" appearance="outline">
             <mat-label>Categoria</mat-label>
+
             <mat-select formControlName="category">
-              <mat-option value="Eletrônicos">Eletrônicos</mat-option>
-              <mat-option value="Móveis">Móveis</mat-option>
-              <mat-option value="Suprimentos">Suprimentos</mat-option>
-              <mat-option value="Serviços">Serviços</mat-option>
+              <mat-option value="Eletrônicos"> Eletrônicos </mat-option>
+
+              <mat-option value="Móveis"> Móveis </mat-option>
+
+              <mat-option value="Suprimentos"> Suprimentos </mat-option>
+
+              <mat-option value="Serviços"> Serviços </mat-option>
             </mat-select>
+
+            @if (form.get('category')?.hasError('required') && form.get('category')?.touched) {
+              <mat-error> Selecione uma categoria. </mat-error>
+            }
           </mat-form-field>
         </div>
 
-        <!-- Campo: Descrição (Textarea para textos longos) -->
+        <!-- Campo: Descrição -->
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label id="description-label">Descrição</mat-label>
+          <mat-label id="description-label"> Descrição </mat-label>
+
           <textarea
             id="description"
             matInput
@@ -56,14 +77,27 @@
             placeholder="Detalhes e especificações do pedido..."
             formControlName="description"
           ></textarea>
+
+          @if (form.get('description')?.hasError('required') && form.get('description')?.touched) {
+            <mat-error> A descrição é obrigatória. </mat-error>
+          }
         </mat-form-field>
       </form>
     </mat-card-content>
 
-    <!-- Botões de Ação do Card -->
+    <!-- Botões -->
     <mat-card-actions class="form-actions">
-      <button mat-button class="btn-cancelar" (click)="onCancel()">Cancelar</button>
-      <button mat-raised-button class="btn-salvar" (click)="onSubmit()">Salvar Pedido</button>
+      <button mat-button type="button" class="btn-cancelar" (click)="onCancel()">Cancelar</button>
+
+      <button
+        mat-raised-button
+        type="button"
+        [disabled]="form.invalid"
+        class="btn-salvar"
+        (click)="onSubmit()"
+      >
+        Salvar Pedido
+      </button>
     </mat-card-actions>
   </mat-card>
 </mat-card>

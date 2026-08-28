@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { AuthService } from './authservice';
+import { ErrorInteceptor } from './error-inteceptor';
 
-describe('Authservice', () => {
-  let service: AuthService;
+describe('ErrorInteceptor', () => {
+  let service: typeof ErrorInteceptor;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AuthService);
+    service = TestBed.inject(ErrorInteceptor);
   });
 
   it('should be created', () => {

@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { CallPedidos } from './call-pedidos';
+import { CallPedidosService } from './call-pedidos';
 
 describe('CallPedidos', () => {
-  let service: CallPedidos;
+  let service: CallPedidosService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CallPedidos);
+    service = TestBed.inject(CallPedidosService);
   });
 
   it('should be created', () => {

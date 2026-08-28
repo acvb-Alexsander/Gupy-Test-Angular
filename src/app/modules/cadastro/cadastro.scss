@@ -160,7 +160,7 @@
 
   background: rgba(93, 45, 135, 0.1);
 
-  color: #5d2d87;
+  color: #160627;
 
   font-size: 21px;
 }
@@ -333,6 +333,21 @@ mat-form-field {
     transform 0.2s ease,
     box-shadow 0.2s ease,
     background-color 0.2s ease;
+    &:hover:not(:disabled) {
+      background-color: #40146f !important;
+
+      transform: translateY(-1px);
+
+      box-shadow:
+        0 4px 12px rgba(44, 11, 80, 0.25) !important;
+    }
+
+    &:disabled {
+      background-color: #d1cdd5 !important;
+      color: #575555 !important;
+      cursor: not-allowed;
+      box-shadow: none !important;
+    }
 }
 
 .cadastro-button mat-icon {
